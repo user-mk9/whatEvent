@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.whatevent.organiserPageController">
+   <children>
+      <SplitPane dividerPositions="0.15687919463087246" layoutX="264.0" layoutY="100.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label layoutX="195.0" layoutY="4.0" text="WhatEvent App Organiser Page">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="195.0" layoutY="33.0" text="Welcome ..." />
+                  <Button layoutX="40.0" layoutY="17.0" mnemonicParsing="false" onAction="#eventSummary" text="Events Summary" />
+                  <Button layoutX="520.0" layoutY="17.0" mnemonicParsing="false" onAction="#exitToHomePage" text="Logout" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.29797979797979796" layoutX="151.0" layoutY="86.0" prefHeight="332.0" prefWidth="597.3333333333334" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TextArea fx:id="eventTextArea" layoutX="-33.0" layoutY="-25.0" prefHeight="330.0" prefWidth="282.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-108.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <GridPane layoutX="72.0" layoutY="11.0" prefHeight="156.0" prefWidth="374.0" AnchorPane.bottomAnchor="169.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Event Title*" />
+                                    <Label text="Event Description*" GridPane.rowIndex="1" />
+                                    <Label text="Event Type" GridPane.rowIndex="2" />
+                                    <Label text="Event Location" GridPane.rowIndex="3" />
+                                    <Label text="Event Venue*" GridPane.rowIndex="4" />
+                                    <Label text="Total Price*" GridPane.rowIndex="5" />
+                                    <TextField fx:id="eventTitle" GridPane.columnIndex="1" />
+                                    <TextField fx:id="eventDescription" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="eventVenue" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <TextField fx:id="totalPrice" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <ChoiceBox fx:id="eventType" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <ChoiceBox fx:id="eventLocation" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                              <Button layoutX="311.0" layoutY="196.0" mnemonicParsing="false" onAction="#createEvent" text="Create Event" />
+                              <GridPane layoutX="20.0" layoutY="255.0" prefHeight="330.0" prefWidth="414.0" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="255.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Event ID" />
+                                    <TextField fx:id="idField" promptText="Enter ID to read or update" GridPane.columnIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <Button layoutX="160.0" layoutY="302.0" mnemonicParsing="false" onAction="#handleUpdateDetails" text="Update Details" />
+                              <Button layoutX="274.0" layoutY="302.0" mnemonicParsing="false" onAction="#handleReadDetails" text="Display Event Details" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
